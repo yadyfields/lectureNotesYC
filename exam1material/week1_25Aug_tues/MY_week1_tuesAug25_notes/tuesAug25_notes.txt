@@ -97,11 +97,12 @@ I order fries or I order chips.
 
 
 
-- in English, how do we interpret "or"? 
+- in English, how do we interpret "or"? *Exclusive "or", meaning one or the other but not both
 
 
 
 - in programming? 
+    *inclusive, it can be one or the other or both to be true.
 
 
 
@@ -162,7 +163,7 @@ What rule are we seeing with an "or" statement,
 where we know that one of the statements is NOT true?
 
 
-
+*The other side is true
 
 
 ////////////////////////////////////////////////////////
@@ -174,10 +175,11 @@ It is raining.
 
 --> What can I conclude? 
 
-
+    *Since it is raining, it means I will get wet.
 
 
 How to write with -> symbol?
+
 
 
 
@@ -188,7 +190,7 @@ and we know that the "if" part is true?
 
     ...what can we always conclude?
 
-
+    *the then part is true
 
 
 
@@ -199,6 +201,8 @@ I am late for class.
 
 --> What can I conclude? 
 
+    *Nothing
+    *I could have heard my alarm or not, there are other ways I could be late.
 
 /////////////////////////////////////////////////////////
 
@@ -207,7 +211,8 @@ I hear my alarm.
 
 --> What can I conclude? 
 
-
+    *Nothing
+    *Could have been late or not
 
 
 
@@ -220,11 +225,14 @@ I'm not late for class.
 
 --> What can I conclude? 
 
+    *either heard the alarm or didn't hear the alarm
+    *Can't be the case that i didn't hear my alarm, because this would mean that i was both late and not late
 
+    *Must be the case that i heard my alarm.
 
 
 is equivalent to (called the contrapositive):
-
+    *(if/then statements are like making promises that if this happens, then this other thing will happen because of my if)
 If p Then q     is equivalent to...
 
 
@@ -238,7 +246,8 @@ if (condition) {
 
 --> what if we know statement is NOT executed? 
 
-
+    *if condition, then statement
+    *if NOT statement, then not condition
 
 
 
@@ -246,7 +255,7 @@ if (condition) {
 
 More if/then logic in programming.
 
-
+*y = 17;
 if (num < 4 || x >= 10) {
 
     y = 17;
@@ -254,7 +263,8 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is 17 here. What do we know?
 
-
+    *Nothing. y might have been 17 before the if statement, or one of the conditions
+    or both could be true.
 
 /////////////////////////////////////////////////////////
 
@@ -266,6 +276,7 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is 17 here. Can we conclude anything now?
 
+    * We know one or both sides of the if was true because y changed to 17
 
 //////////////////////////////////////////////////////////
 
@@ -276,6 +287,8 @@ if (num < 4 || x >= 10) {
 
 --> suppose y is NOT 17 here. What do we know?
 
+    *both conditions are false,
+    num >= 4 AND x < 10 (Demorgan's Law)
 
 ///////////////////////////////////////////////////////
 
