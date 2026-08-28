@@ -45,7 +45,17 @@ else {
 
 --> is it possible for "statements2" to execute?7
 
+    *first if condition has to be false
+    *x < 3 || y > 4 is false
+    *x < 3 is false AND y > 4 is false
+    *x >= 3 AND y <= 4
 
+    *the (first) else if condition has to be true
+    *x < 5 && y == 7 is true
+    *x < 5, also y == 7
+
+    *putting them together: x would have to be 4, y would have to be both <= 4 AND == 7, not possible
+    
 
 
 ////////////////////////////////////////////////////////
@@ -62,13 +72,20 @@ Ava says that Bob is a knave.
 Bob says, "Neither Ava nor I are knaves."
 
 
-What does "neither" mean?
+What does "neither" mean? *both false
 
 
-Rewrite Bob:
+Rewrite Bob: *Ava is not a knave and I am not a knave
+
+    *Ava says that Bob is a knave.
 
 
 What are Ava and Bob? 
+
+*Suppose Ava is a knight. Then from her statement, bob would have to be a knave.
+Then Bob's statement is correctly false -- they are not both knights
+
+*Suppose instead that Ava is a knave. From her statement, Bob would have to be a knight.
 
 
 ////////////////////////////////////////////////////////
