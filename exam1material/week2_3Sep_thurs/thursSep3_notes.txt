@@ -189,11 +189,15 @@ q: I can drive a car
 
 p -> q
 
+p: T (I am at least 16)
+q: F (I can't drive)
+
 2) I'm not at least 16 years old or I can drive a car.
 
 ¬p v q
 
-
+p: T (I am at least 16)
+q: F (I can't drive)
 
 --> are they saying the same thing?
 
@@ -214,18 +218,19 @@ q: I can drive a car
 
 1) If I am at least 16 years old, then I can drive a car.
 
-
+p -> q
 
 
 2) If I can drive a car, then I am at least 16 years old.
 
-
+q -> p
 
 --> are they saying the same thing?
-
+no
 
 --> could we PROVE our answer?
-
+find ONE truth assignment that makes one statement true but
+the other false
 
 //////////////////////////////////
 
@@ -233,11 +238,15 @@ Summary of equivalence.
 
 How do we prove two statements ARE equivalent?
 
+complete two truth tables
+demonstrate that for each possible truth assignment the statements
+have the same output
 
 
 How do we prove two statements are NOT equivalent?
 
-
+find One truth assignment that makes one statement true but
+the other false
 
 
 //////////////////////////
@@ -261,7 +270,7 @@ if (a == 4 || a == 5) {
 How could we express the NEGATION
 (i.e., what condition would be true for the "else")?
 
-
+if (a != 4 && a != 5)
 
 ///
 
@@ -279,11 +288,11 @@ How could we express the NEGATION
 
 DeMorgan's laws in propositional logic:
 
-¬(p ∨ q) is equivalent to... 
+¬(p ∨ q) is equivalent to... ¬p ^ ¬q
 
 
 
-¬(p ∧ q) is equivalent to... 
+¬(p ∧ q) is equivalent to... ¬p v ¬q
 
 
 ////////////////////////
