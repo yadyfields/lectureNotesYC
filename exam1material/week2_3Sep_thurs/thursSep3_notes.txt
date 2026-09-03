@@ -79,22 +79,22 @@ Propositional logic.
 
 Which ones are propositions?
 
-Today is Thursday.
+Today is Thursday. yes
 
 
-What time is it?
+What time is it? no
 
 
-x == 2
+x == 2 yes
 
 
-Pigs can fly.
+Pigs can fly. yes
 
 
-Drive carefully.
+Drive carefully. no
 
 
-y <= 4
+y <= 4 yes
 
 
 
@@ -109,17 +109,17 @@ Suppose we have these propositional atoms:
 
 How would we express these as English sentences/conditions?
 
-    ¬p:
+    ¬p: It is not below freezing
 
-    p ∧ q:
+    p ∧ q: It is below freezing and it is snowing
 
-    p → q :
+    p → q : If it is below freezing, then it is snowing
 
-    ¬p → ¬q:
+    ¬p → ¬q: if it is not below freezing, then it is not snowing
 
-    r ∨ s:
+    r ∨ s: y <= 4 || x == 2
 
-    ¬r:
+    ¬r: y > 4
 
 
 ////////////////////////////////////////
@@ -130,23 +130,28 @@ Example:
 
 You can't enroll for the course if you haven't taken 
 the prerequisite or the course is full.
+Really saying; if you havent taken the prerequisite or
+the course is full, then you can't enroll for the course
 
 
 --> what are the propositional atoms?
 
-
-
+p: you can enroll for the course
+q: you have taken the prerequisite
+r: the course is full
 
 --> translate to propositional logic:
-
+¬q v r -> ¬p
 
 
 What is the *contrapositive* of our statement?
 
+p -> q has a contrapositive of ¬q -> ¬p
 
 
-
-
+¬q v r -> ¬p
+has contrapositive of: p -> ¬(¬q v r)
+    equivalent of DeMorgan's Law
 
 //////////////////////////////////////////
 ∧ ∨ ¬ → 
@@ -162,10 +167,13 @@ if (x <= 2 || y >= 0) {
 
 Propositional atoms?
 
-
+p: x <= 2
+q: y >= 0
+r: z == 17
+s: answer == 25
 
 Translation? (if ... then ...)
-
+    (p ∨ q) ∧
 
 
 
@@ -179,10 +187,11 @@ q: I can drive a car
 
 1) If I am at least 16 years old, then I can drive a car.
 
-
+p -> q
 
 2) I'm not at least 16 years old or I can drive a car.
 
+¬p v q
 
 
 
