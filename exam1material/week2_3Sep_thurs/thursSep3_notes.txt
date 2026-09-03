@@ -300,7 +300,8 @@ DeMorgan's laws in propositional logic:
 --> how can we prove the first of DeMorgan's laws?
 (demorgan1.logika and demorgan2.logika)
 
-
+equivalent because every possible truth assignment gives the
+same output 
 
 
 
