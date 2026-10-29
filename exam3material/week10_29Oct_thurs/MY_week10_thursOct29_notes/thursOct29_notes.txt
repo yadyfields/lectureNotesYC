@@ -29,7 +29,9 @@ Direct (conditional) proof
 
 --> how would we do this with natural deduction?
 
-
+        Assume P
+        ...
+        get to Q
 
 
 
@@ -37,22 +39,31 @@ Direct (conditional) proof
 
 Example: prove that the product of two even integers is even.
 
-
+        
 If our domain is integers and we have the predicate Even(x), how
 would you write this statement in predicate logic?
 
-
+        For All x, For All y, (Even(x) ^ Even(y) -> Even(xy))
 
 
 
 What's the idea of proving this in predicate logic?
 
+        Let x and y be Integers. Assume x and y are even. We must show that
+        xy is even. Since x is even we have that x = 2k for some integer k.
+        Since y is even, we have that y = 2k for some integer k.
 
+        We have that:
+        xy = (2k)(2m)
+           = 2(2km)
+        Thus xy = 2b where b is the integer 2km.
+
+        ...want xy to be even -- need 2(some Integer)
 
 
 Direct proof:
 
-
+        
 
 
 
@@ -66,11 +77,20 @@ The square of any odd integer is odd.
 
 How can we write this in predicate logic?
 
-
+For All x, (Odd(x) -> Odd(x^2))
 
 Direct proof:
 
+        Let x be an odd integer. We must show that x^2 is also odd.
+        If x is an odd integer, then x = 2k + 1 for some integer k.
 
+        We have:
+        x^2 = (2k+1)^2
+            = (2k+1)(2k+1)
+            = 4k^2 + 4k + 1
+            = 2(2k^2 + 2k) + 1
+        Thus x^2 = 2b + 1 where b is the integer 2k^2 + 2k, and so x^2 is
+        odd by definition.
 
 ////////////////////////////////
 
@@ -86,7 +106,7 @@ Proof by contrapositive
 
 What is the contrapositive of P → Q?
 
-
+        !Q -> !P
 
 
 
@@ -105,24 +125,47 @@ Example (contrapositive)
 If x^2 is odd for an integer x, then x is odd.
 
 Think of as P → Q
-    P: ? 
-    Q: ? 
+    P: ? x^2 is odd for an integer x
+    Q: ? x is odd
 
 Contrapositive? 
 
-
+        if x is even for some integer x, then its square is also even.
 
 
 
 Try direct proof first.
 
+        if x^2 is odd for an integer x, then x is odd
 
+        Let x be an integer, and assume that x^2 is odd. We must show
+        that x is odd
+
+        Since x^2 is odd, then x^2 = 2k+1 for some integer k.
+        x^2 = 2k+1
+        ... would need to take a sqrt, but don't know 
+
+        ...want x = 2(some integer) + 1
 
 
 
 
 Now try contrapositive proof.
 
+        if x is even for some integer x, then its square is also even.
+
+        Proof (by contrapositive)
+
+        Let x be an even integer. We must show that x^2 is also even.
+        If x is even, then x = 2k for some integer k.
+
+        We have that:
+        x^2 = (2k)^2
+            = 4k^2
+            = 2(2k^2)
+        Thus x^2 = 2b where b is the integer 2k^2. x^2 is even by definition.
+
+        ...need x^2 = 2(some integer)
 
 
 
@@ -138,19 +181,19 @@ We want to "prove" that 1 = 2.
 "Proof:"
 Let a and b be two equal positive integers. We have that:
 
-    1) a = b                    (reason?) 
+    1) a = b                    (reason?) we assumed they are equal
 
-    2) a^2 = ab                 (reason?) 
+    2) a^2 = ab                 (reason?) multiplied both sides by a 
 
-    3) a^2 - b^2 = ab - b^2     (reason?)
+    3) a^2 - b^2 = ab - b^2     (reason?) subtracted b^2 from both sides
 
-    4) (a-b)(a+b) = b(a-b)      (reason?) 
+    4) (a-b)(a+b) = b(a-b)      (reason?) factored both sides
 
-    5) a+b = b                  (reason?)
+    5) a+b = b                  (reason?) divided both sides by a-b
 
-    6) 2b = b                   (reason?)              
+    6) 2b = b                   (reason?) a and b are the same, so plugged in b for a.
 
-    7) 2 = 1                    (reason?) 
+    7) 2 = 1                    (reason?) divided both sides by b
 
 
 
@@ -207,6 +250,18 @@ If x^2 is even for an integer x, then x is even.
 
 (which template? )  
 
+    Assume x^2 is even for some integer x. Supposed for the sake of
+    contradiction, that x is odd.
+
+    Since x^2 is even, we have that x^2 = 2k for some integer k.
+    Since x is odd, we have that x = 2m + 1 for some integer m.
+
+    Squaring both sides of x = 2m + 1, we have:
+    x^2 = (2m+1)^2
+        = 4m^2 + 4m + 1
+        = 2(2m^2 + 2m) + 1
+    Thus x^2 = 2b+1 where b is the integer 2m^2 + 2m, and so x^2 is odd.
+    This is a contradiction with out previous assumption
 
 
 
